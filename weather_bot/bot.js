@@ -5,10 +5,8 @@ const client = new Client({
         GatewayIntentBits.Guilds,
         GatewayIntentBits.MessageContent,
         GatewayIntentBits.GuildMessages,
-        //GatewayIntentBits.Message,
-        //Intent is to message in the main chat
     ]
-})
+});
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
