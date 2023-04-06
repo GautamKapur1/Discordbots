@@ -1,7 +1,9 @@
 require('dotenv').config(); //initialize dotenv
 const fs = require('fs');
 const path = require('path');
-const { Client, Events, GatewayIntentBits, Collection } = require('discord.js')
+const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
+const http = require('http');
+
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -61,3 +63,10 @@ client.on(Events.InteractionCreate, async interaction => {
 
 //make sure this line is the last line
 client.login(process.env.WEATHER_BOT_BOT_TOKEN); //login bot using token
+
+http.createServer((req, res) =>
+{
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('server running');
+    res.end();
+}).listen(10000);
