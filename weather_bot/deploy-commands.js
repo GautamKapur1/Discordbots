@@ -33,8 +33,8 @@ const rest = new REST({ version: '10' }).setToken(process.env.WEATHER_BOT_BOT_TO
 
 		// The put method is used to fully refresh all commands in the guild with the current set
 		const data = await rest.put(
-			Routes.applicationGuildCommands(process.env.WEATHER_BOT_BOT_CLIENT_ID, process.env.DBT_SERVER_ID),
-            // Routes.applicationGuildCommands(process.env.WEATHER_BOT_BOT_CLIENT_ID, process.env.OG_SERVER_ID),
+			// Routes.applicationGuildCommands(process.env.WEATHER_BOT_BOT_CLIENT_ID, process.env.DBT_SERVER_ID),
+            Routes.applicationGuildCommands(process.env.WEATHER_BOT_BOT_CLIENT_ID, process.env.OG_SERVER_ID),
 			{ body: commands },
 		);
 
